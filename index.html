@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagoda Ekayana | Discover Tomohon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red: #762b24;
+  --gold: #c69b53;
+  --cream: #f5f1e9;
+  --dark: #211e1b;
+  --muted: #77716a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+a { text-decoration:none; color:inherit; }
+
+img { display:block; width:100%; object-fit:cover; }
+
+nav {
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  padding:27px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+  color:white;
+}
+
+.logo {
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  letter-spacing:1px;
+}
+
+.logo span { color:#e3bd79; }
+
+.nav-links {
+  display:flex;
+  gap:35px;
+  list-style:none;
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.nav-links a { transition:.3s; }
+.nav-links a:hover { color:#e7c17e; }
+
+.menu-btn {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:27px;
+  cursor:pointer;
+}
+
+.hero {
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:150px 10% 100px;
+  color:white;
+  background:
+  linear-gradient(90deg,rgba(15,12,10,.78),rgba(15,12,10,.16)),
+  url('https://coinventmediastorage.blob.core.windows.net/media-storage-container/gphoto_ChIJEVP5JB9thzIRHozkL_1CDrQ_0.jpg') center 43%/cover;
+}
+
+.hero-content { max-width:720px; }
+
+.eyebrow {
+  color:#e6c17e;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:4px;
+  margin-bottom:25px;
+}
+
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,8vw,100px);
+  font-weight:500;
+  line-height:1.04;
+  margin-bottom:25px;
+}
+
+.hero p {
+  max-width:520px;
+  color:#e8e4df;
+  line-height:1.9;
+  font-size:15px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:15px;
+  margin-top:35px;
+  flex-wrap:wrap;
+}
+
+.btn {
+  display:inline-block;
+  padding:16px 27px;
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:#211e1b;
+}
+
+.btn-outline {
+  border:1px solid rgba(255,255,255,.7);
+  color:white;
+}
+
+.btn:hover { transform:translateY(-4px); }
+
+.hero-bottom {
+  position:absolute;
+  bottom:35px;
+  left:10%;
+  right:10%;
+  display:flex;
+  justify-content:space-between;
+  color:#e6e0d6;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+section { padding:110px 10%; }
+
+.section-label {
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.section-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(35px,5vw,57px);
+  font-weight:500;
+  line-height:1.2;
+  margin-bottom:25px;
+}
+
+.about {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about-image {
+  height:570px;
+  position:relative;
+}
+
+.about-image img {
+  height:100%;
+  object-fit:cover;
+}
+
+.image-note {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  background:var(--cream);
+  padding:15px 22px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.about-text p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+  margin-bottom:18px;
+}
+
+.signature {
+  margin-top:30px;
+  color:var(--red);
+  font-family:'Playfair Display',serif;
+  font-size:21px;
+}
+
+.highlights {
+  background:#25211e;
+  color:white;
+}
+
+.center-heading {
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 60px;
+}
+
+.center-heading p {
+  color:#aaa39b;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.highlight-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:45px;
+}
+
+.highlight-card {
+  border-top:1px solid #61554a;
+  padding-top:25px;
+}
+
+.number {
+  font-family:'Playfair Display',serif;
+  font-size:35px;
+  color:var(--gold);
+  margin-bottom:25px;
+}
+
+.highlight-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+.highlight-card p {
+  color:#aaa39b;
+  font-size:13px;
+  line-height:1.9;
+}
+
+.gallery-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:45px;
+  gap:20px;
+}
+
+.gallery-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr 1fr;
+  grid-template-rows:270px 270px;
+  gap:15px;
+}
+
+.gallery-item {
+  position:relative;
+  overflow:hidden;
+}
+
+.gallery-item:first-child {
+  grid-row:span 2;
+}
+
+.gallery-item img {
+  height:100%;
+  transition:transform .7s;
+}
+
+.gallery-item:hover img { transform:scale(1.07); }
+
+.gallery-caption {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:35px 20px 20px;
+  color:white;
+  background:linear-gradient(transparent,rgba(0,0,0,.7));
+  font-size:13px;
+}
+
+.gallery-caption small {
+  display:block;
+  margin-top:5px;
+  color:#e0c18a;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+.visit {
+  background:#eae3d8;
+}
+
+.visit-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.info-row {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid #cfc5b7;
+  padding:20px 0;
+  font-size:13px;
+}
+
+.info-row span:first-child {
+  color:var(--muted);
+}
+
+.info-row span:last-child {
+  text-align:right;
+  font-weight:600;
+}
+
+.tips {
+  background:white;
+  padding:35px;
+}
+
+.tips h3 {
+  font-family:'Playfair Display',serif;
+  font-size:27px;
+  margin-bottom:25px;
+}
+
+.tips ul { list-style:none; }
+
+.tips li {
+  padding:13px 0;
+  border-bottom:1px solid #eee9e1;
+  font-size:13px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.tips li::before {
+  content:'✦';
+  color:var(--gold);
+  margin-right:12px;
+}
+
+.location {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:450px;
+  background:var(--red);
+  color:white;
+}
+
+.location-content {
+  padding:90px 12%;
+}
+
+.location-content p {
+  font-size:14px;
+  line-height:2;
+  color:#e4d3c8;
+  margin-bottom:30px;
+}
+
+.location-image {
+  min-height:400px;
+}
+
+.location-image img {
+  height:100%;
+}
+
+footer {
+  background:#1c1917;
+  color:white;
+  padding:55px 10%;
+  text-align:center;
+}
+
+.footer-logo {
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+footer p {
+  font-size:11px;
+  color:#99918a;
+  line-height:2;
+}
+
+footer .credit {
+  margin-top:25px;
+  color:#d1ac70;
+  letter-spacing:1px;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:850px) {
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:75px;
+    left:5%;
+    width:90%;
+    padding:25px;
+    background:#29221e;
+    flex-direction:column;
+    gap:25px;
+  }
+
+  .nav-links.active { display:flex; }
+  .menu-btn { display:block; }
+
+  .about,.visit-layout,.location {
+    grid-template-columns:1fr;
+  }
+
+  .about { gap:40px; }
+  .about-image { height:420px; }
+  .highlight-grid { grid-template-columns:1fr; gap:35px; }
+  .gallery-grid {
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:300px 200px 200px;
+  }
+  .gallery-item:first-child { grid-row:auto; grid-column:span 2; }
+  .gallery-heading { align-items:start; flex-direction:column; }
+  .location-content { padding:70px 10%; }
+}
+
+@media(max-width:500px) {
+  section { padding:75px 7%; }
+  .hero { padding:140px 7% 100px; }
+  .hero h1 { font-size:53px; }
+  .hero-bottom { left:7%; right:7%; font-size:8px; }
+  .gallery-grid { gap:9px; }
+  .gallery-item:first-child { grid-column:span 2; }
+  .gallery-grid { grid-template-rows:250px 170px 170px; }
+  .info-row { font-size:12px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">EKAYANA<span>.</span></a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#highlights">Highlights</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#visit">Travel Guide</a></li>
+  </ul>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Tomohon · North Sulawesi · Indonesia</div>
+
+    <h1>Discover the Beauty of Pagoda Ekayana</h1>
+
+    <p>
+      Explore the beauty of Buddhist architecture, discover cultural
+      heritage, and experience a peaceful destination in the highlands
+      of Tomohon.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-gold">Explore Destination</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pagoda+Ekayana+Tomohon"
+         target="_blank" class="btn btn-outline">Find Location ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <span>Discover North Sulawesi</span>
+    <span>01 — Cultural Destination</span>
+  </div>
+</header>
+
+<section class="about reveal" id="about">
+  <div class="about-image">
+    <img
+      src="https://coinventmediastorage.blob.core.windows.net/media-storage-container/gphoto_ChIJEVP5JB9thzIRHozkL_1CDrQ_0.jpg"
+      alt="Pagoda Ekayana Tomohon">
+    <div class="image-note">A Cultural Landmark in Tomohon</div>
+  </div>
+
+  <div class="about-text">
+    <div class="section-label">About the Destination</div>
+    <h2 class="section-title">A Place Where Architecture Meets Serenity</h2>
+
+    <p>
+      Pagoda Ekayana, also known as part of Vihara Buddhayana,
+      is one of the distinctive cultural and religious destinations
+      in Tomohon, North Sulawesi.
+    </p>
+
+    <p>
+      Located in the Kakaskasen area, the destination is known for
+      its beautiful multi-level pagoda, colorful architecture,
+      artistic decorations, and peaceful surroundings.
+    </p>
+
+    <p>
+      Visitors can appreciate the architecture, learn about
+      Buddhist cultural heritage, and enjoy the natural scenery
+      surrounding the temple complex.
+    </p>
+
+    <div class="signature">Discover. Appreciate. Respect.</div>
+  </div>
+</section>
+
+<section class="highlights reveal" id="highlights">
+  <div class="center-heading">
+    <div class="section-label">Experience Ekayana</div>
+    <h2 class="section-title">Discover What Makes It Special</h2>
+    <p>
+      More than an architectural landmark, Pagoda Ekayana offers
+      visitors an opportunity to appreciate culture, spirituality,
+      and the beauty of Tomohon.
+    </p>
+  </div>
+
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="number">01</div>
+      <h3>Unique Architecture</h3>
+      <p>
+        Admire the multi-level pagoda, traditional design,
+        colorful details, and artistic decorations.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="number">02</div>
+      <h3>Cultural Heritage</h3>
+      <p>
+        Discover Buddhist cultural elements and appreciate
+        the meaning behind the statues and temple architecture.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="number">03</div>
+      <h3>Peaceful Atmosphere</h3>
+      <p>
+        Enjoy a quiet environment surrounded by greenery
+        and the beautiful highland landscape of Tomohon.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" id="gallery">
+  <div class="gallery-heading">
+    <div>
+      <div class="section-label">Destination Gallery</div>
+      <h2 class="section-title">A Glimpse of Ekayana</h2>
+    </div>
+    <p style="max-width:280px;color:#77716a;font-size:13px;line-height:1.8">
+      Discover the architecture, details, and surroundings
+      of this remarkable destination.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://coinventmediastorage.blob.core.windows.net/media-storage-container/gphoto_ChIJEVP5JB9thzIRHozkL_1CDrQ_0.jpg"
+           alt="Pagoda tower and dragon fountain">
+      <div class="gallery-caption">
+        The Pagoda
+        <small>ARCHITECTURAL BEAUTY</small>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://airial.travel/_next/image?q=70&url=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F19%2F08%2F41%2F26%2Fimg-20190829-152939-largejpg.jpg&w=2048"
+           alt="Temple building">
+      <div class="gallery-caption">
+        Temple Details
+        <small>CULTURAL HERITAGE</small>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/02/26/f1b22915-f4a2-4456-8a63-cb5a8400ca93-1614318685751-96c604f08f01a2bd2b831a4b75c90f90.jpg"
+           alt="Garden and statues">
+      <div class="gallery-caption">
+        Temple Garden
+        <small>EXPLORE THE AREA</small>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900"
+           alt="Nature scenery">
+      <div class="gallery-caption">
+        Natural Surroundings
+        <small>THE BEAUTY OF TOMOHON</small>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900"
+           alt="Green landscape">
+      <div class="gallery-caption">
+        Highland Atmosphere
+        <small>NORTH SULAWESI</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit reveal" id="visit">
+  <div class="center-heading">
+    <div class="section-label">Visitor Information</div>
+    <h2 class="section-title">Plan Your Visit</h2>
+    <p style="color:#77716a;font-size:14px;line-height:1.8">
+      Prepare for your visit and discover Pagoda Ekayana
+      in the beautiful city of Tomohon.
+    </p>
+  </div>
+
+  <div class="visit-layout">
+    <div>
+      <div class="info-row">
+        <span>Destination</span>
+        <span>Pagoda Ekayana</span>
+      </div>
+
+      <div class="info-row">
+        <span>Location</span>
+        <span>Kakaskasen, Tomohon</span>
+      </div>
+
+      <div class="info-row">
+        <span>Province</span>
+        <span>North Sulawesi</span>
+      </div>
+
+      <div class="info-row">
+        <span>Activities</span>
+        <span>Sightseeing & Photography</span>
+      </div>
+
+      <div class="info-row">
+        <span>Transportation</span>
+        <span>Car & Motorcycle</span>
+      </div>
+
+      <div class="info-row">
+        <span>Entrance Fee</span>
+        <span>Check Locally</span>
+      </div>
+    </div>
+
+    <div class="tips">
+      <h3>Travel Tips</h3>
+      <ul>
+        <li>Wear comfortable clothing and shoes.</li>
+        <li>Respect the religious environment and local customs.</li>
+        <li>Keep the destination clean.</li>
+        <li>Ask permission before photographing worshippers.</li>
+        <li>Follow the temple's visitor guidelines.</li>
+        <li>Check current visitor information before travelling.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="location reveal">
+  <div class="location-content">
+    <div class="section-label">Find Your Way</div>
+    <h2 class="section-title">Discover Pagoda Ekayana</h2>
+    <p>
+      Located in Kakaskasen, Tomohon, North Sulawesi.
+      Plan your journey and explore one of the city's
+      distinctive cultural destinations.
+    </p>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Pagoda+Ekayana+Tomohon"
+       target="_blank" class="btn btn-gold">
+       Open Google Maps ↗
+    </a>
+  </div>
+
+  <div class="location-image">
+    <img
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200"
+      alt="North Sulawesi landscape">
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">PAGODA EKAYANA.</div>
+  <p>Discover North Sulawesi, Indonesia.</p>
+  <p>Explore culture. Appreciate heritage. Travel responsibly.</p>
+
+  <p class="credit">Website Created by Luiz Pengan</p>
+  <p>Global Tourism Management · Tourism Destination Website</p>
+  <p style="margin-top:20px">© 2026 Pagoda Ekayana Destination Guide</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
